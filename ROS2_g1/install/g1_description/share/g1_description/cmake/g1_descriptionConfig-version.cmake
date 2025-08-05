@@ -1,0 +1,1 @@
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/build/g1_description/ament_cmake_core/g1_descriptionConfig-version.cmake

@@ -1,0 +1,16 @@
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description//g1_29dof_rev_1_0_with_inspire_hand_DFQ.urdf
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/ament_index/resource_index/package_run_dependencies/g1_description
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/ament_index/resource_index/parent_prefix_path/g1_description
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/environment/ament_prefix_path.sh
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/environment/ament_prefix_path.dsv
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/environment/path.sh
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/environment/path.dsv
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/local_setup.bash
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/local_setup.sh
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/local_setup.zsh
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/local_setup.dsv
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/package.dsv
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/ament_index/resource_index/packages/g1_description
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/cmake/g1_descriptionConfig.cmake
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/cmake/g1_descriptionConfig-version.cmake
+/home/pedro_setubal/Workspaces/G1/ROS2_g1/install/g1_description/share/g1_description/package.xml

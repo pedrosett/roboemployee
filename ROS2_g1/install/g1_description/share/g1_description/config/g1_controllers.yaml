@@ -1,0 +1,43 @@
+controller_manager:
+  ros__parameters:
+    update_rate: 1000  # Hz
+    
+    # Broadcaster para estado das juntas
+    g1_joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+      
+    # Controlador posição para mãos 5-dedos
+    g1_hand_position_controller:
+      type: position_controllers/JointGroupPositionController
+      joints: 
+        - left_hand_thumb_0
+        - left_hand_thumb_1
+        - left_hand_thumb_2
+        - left_hand_index_0
+        - left_hand_index_1
+        - left_hand_middle_0
+        - left_hand_middle_1
+        - right_hand_thumb_0
+        - right_hand_thumb_1
+        - right_hand_thumb_2
+        - right_hand_index_0
+        - right_hand_index_1
+        - right_hand_middle_0
+        - right_hand_middle_1
+        
+    # Controlador esforço para pernas (equilíbrio)
+    g1_leg_effort_controller:
+      type: effort_controllers/JointGroupEffortController
+      joints:
+        - left_hip_pitch
+        - left_hip_roll
+        - left_hip_yaw
+        - left_knee
+        - left_ankle_pitch
+        - left_ankle_roll
+        - right_hip_pitch
+        - right_hip_roll
+        - right_hip_yaw
+        - right_knee
+        - right_ankle_pitch
+        - right_ankle_roll

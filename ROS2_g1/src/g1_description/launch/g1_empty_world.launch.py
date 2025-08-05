@@ -27,18 +27,21 @@ def generate_launch_description():
             ])
         ]),
         launch_arguments={
-            'gz_args': ['-r ', LaunchConfiguration('world')]
+            'gz_args': '-r empty.sdf'
         }.items()
     )
     
-    # Robot state publisher
+    # Robot state publisher  
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         parameters=[{
-            'robot_description': PathJoinSubstitution([
-                pkg_share, 'urdf', 'g1_gazebo.urdf'
-            ])
+            'robot_description': open(
+                os.path.join(
+                    os.path.dirname(__file__), '..', 
+                    'g1_29dof_rev_1_0_with_inspire_hand_DFQ.urdf'
+                )
+            ).read()
         }],
         output='screen'
     )
@@ -55,7 +58,10 @@ def generate_launch_description():
         package='ros_gz_sim',
         executable='create',
         arguments=[
-            '-file', PathJoinSubstitution([pkg_share, 'urdf', 'g1_gazebo.urdf']),
+            '-file', os.path.join(
+                os.path.dirname(__file__), '..', 
+                'g1_29dof_rev_1_0_with_inspire_hand_DFQ.urdf'
+            ),
             '-name', 'unitree_g1',
             '-x', '0',
             '-y', '0', 
