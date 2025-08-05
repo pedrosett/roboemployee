@@ -1,0 +1,112 @@
+<mujoco model="g1_office_final">
+  <compiler angle="radian" meshdir="unitree_mujoco/unitree_robots/g1/meshes/" autolimits="true"/>
+  
+  <!-- Copiar toda a estrutura do g1_29dof_with_hand.xml -->
+  <default>
+    <default class="torso_motor">
+      <joint damping="0.05" armature="0.01" frictionloss="0.2"/>
+    </default>
+    <default class="leg_motor">
+      <joint damping="0.05" armature="0.01" frictionloss="0.2"/>
+    </default>
+    <default class="ankle_motor">
+      <joint damping="0.05" armature="0.01" frictionloss="0.2"/>
+    </default>
+    <default class="arm_motor">
+      <joint damping="0.05" armature="0.01" frictionloss="0.2"/>
+    </default>
+    <default class="wrist_motor">
+      <joint damping="0.05" armature="0.01" frictionloss="0.1"/>
+    </default>
+    <default class="hand_motor">
+      <joint damping="0.01" armature="0.001" frictionloss="0.05"/>
+    </default>
+  </default>
+  
+  <asset>
+    <!-- Assets do ambiente -->
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <material name="wall" rgba="0.9 0.9 0.9 1" specular="0.1"/>
+    
+    <!-- Paredes do escritório -->
+    <mesh name="office_walls" file="../../../3d escritorio/body1_structure/body1_structure.obj" scale="0.01 0.01 0.01"/>
+    
+    <!-- Incluir TODOS os meshes do G1 -->
+    <mesh name="pelvis" file="pelvis.STL" />
+    <mesh name="left_hip_yaw_link" file="left_hip_yaw_link.STL" />
+    <mesh name="left_hip_roll_link" file="left_hip_roll_link.STL" />
+    <mesh name="left_hip_pitch_link" file="left_hip_pitch_link.STL" />
+    <mesh name="left_knee_link" file="left_knee_link.STL" />
+    <mesh name="left_ankle_pitch_link" file="left_ankle_pitch_link.STL" />
+    <mesh name="left_ankle_roll_link" file="left_ankle_roll_link.STL" />
+    <mesh name="right_hip_yaw_link" file="right_hip_yaw_link.STL" />
+    <mesh name="right_hip_roll_link" file="right_hip_roll_link.STL" />
+    <mesh name="right_hip_pitch_link" file="right_hip_pitch_link.STL" />
+    <mesh name="right_knee_link" file="right_knee_link.STL" />
+    <mesh name="right_ankle_pitch_link" file="right_ankle_pitch_link.STL" />
+    <mesh name="right_ankle_roll_link" file="right_ankle_roll_link.STL" />
+    <mesh name="waist_yaw_link" file="waist_yaw_link.STL" />
+    <mesh name="waist_roll_link" file="waist_roll_link.STL" />
+    <mesh name="torso_link" file="torso_link.STL" />
+    <mesh name="head_link" file="head_link.STL" />
+    <mesh name="logo_link" file="logo_link.STL" />
+    <mesh name="left_shoulder_pitch_link" file="left_shoulder_pitch_link.STL" />
+    <mesh name="left_shoulder_roll_link" file="left_shoulder_roll_link.STL" />
+    <mesh name="left_shoulder_yaw_link" file="left_shoulder_yaw_link.STL" />
+    <mesh name="left_elbow_link" file="left_elbow_link.STL" />
+    <mesh name="left_wrist_roll_link" file="left_wrist_roll_link.STL" />
+    <mesh name="left_wrist_pitch_link" file="left_wrist_pitch_link.STL" />
+    <mesh name="left_wrist_yaw_link" file="left_wrist_yaw_link.STL" />
+    <mesh name="left_hand_palm_link" file="left_hand_palm_link.STL" />
+    <mesh name="left_hand_thumb_0_link" file="left_hand_thumb_0_link.STL" />
+    <mesh name="left_hand_thumb_1_link" file="left_hand_thumb_1_link.STL" />
+    <mesh name="left_hand_thumb_2_link" file="left_hand_thumb_2_link.STL" />
+    <mesh name="left_hand_middle_0_link" file="left_hand_middle_0_link.STL" />
+    <mesh name="left_hand_middle_1_link" file="left_hand_middle_1_link.STL" />
+    <mesh name="left_hand_index_0_link" file="left_hand_index_0_link.STL" />
+    <mesh name="left_hand_index_1_link" file="left_hand_index_1_link.STL" />
+    <mesh name="right_shoulder_pitch_link" file="right_shoulder_pitch_link.STL" />
+    <mesh name="right_shoulder_roll_link" file="right_shoulder_roll_link.STL" />
+    <mesh name="right_shoulder_yaw_link" file="right_shoulder_yaw_link.STL" />
+    <mesh name="right_elbow_link" file="right_elbow_link.STL" />
+    <mesh name="right_wrist_roll_link" file="right_wrist_roll_link.STL" />
+    <mesh name="right_wrist_pitch_link" file="right_wrist_pitch_link.STL" />
+    <mesh name="right_wrist_yaw_link" file="right_wrist_yaw_link.STL" />
+    <mesh name="right_hand_palm_link" file="right_hand_palm_link.STL" />
+    <mesh name="right_hand_thumb_0_link" file="right_hand_thumb_0_link.STL" />
+    <mesh name="right_hand_thumb_1_link" file="right_hand_thumb_1_link.STL" />
+    <mesh name="right_hand_thumb_2_link" file="right_hand_thumb_2_link.STL" />
+    <mesh name="right_hand_index_0_link" file="right_hand_index_0_link.STL" />
+    <mesh name="right_hand_index_1_link" file="right_hand_index_1_link.STL" />
+    <mesh name="right_hand_middle_0_link" file="right_hand_middle_0_link.STL" />
+    <mesh name="right_hand_middle_1_link" file="right_hand_middle_1_link.STL" />
+  </asset>
+  
+  <worldbody>
+    <!-- Iluminação -->
+    <light pos="0 0 10" dir="0 0 -1" directional="true"/>
+    <light pos="10 10 8" dir="-1 -1 -1" directional="false"/>
+    
+    <!-- Chão -->
+    <geom name="floor" size="50 50 0.05" type="plane" material="groundplane"/>
+    
+    <!-- Paredes do escritório -->
+    <body name="walls" pos="-5.73 -7.00 0">
+      <geom name="office_walls_geom" mesh="office_walls" type="mesh" contype="1" conaffinity="1" material="wall"/>
+    </body>
+    
+    <!-- Incluir o G1 completo do arquivo original -->
+    <include file="../../../unitree_mujoco/unitree_robots/g1/g1_29dof_with_hand.xml"/>
+  </worldbody>
+  
+  <statistic center="0 0 2" extent="20"/>
+  
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="-130" elevation="-20"/>
+  </visual>
+</mujoco>

@@ -1,0 +1,68 @@
+<mujoco model="g1_office_environment">
+  <compiler angle="radian" meshdir="3d escritorio/body1_structure/" texturedir="unitree_mujoco/unitree_robots/g1/"/>
+  
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="-130" elevation="-20"/>
+  </visual>
+  
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+    <!-- Classes do G1 -->
+    <default class="leg_motor">
+      <joint damping="0.05" armature="0.01" frictionloss="0.2" />
+    </default>
+    <default class="ankle_motor">
+      <joint damping="0.05" armature="0.01" frictionloss="0.2" />
+    </default>
+    <default class="arm_motor">
+      <joint damping="0.05" armature="0.01" frictionloss="0.2" />
+    </default>
+    <default class="hand_motor">
+      <joint damping="0.01" armature="0.001" frictionloss="0.05" />
+    </default>
+  </default>
+  
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <material name="wall" rgba="0.95 0.95 0.95 1" specular="0.1"/>
+    
+    <!-- Paredes do escritório (Body1) com escala correta para 3.15m altura -->
+    <mesh file="body1_structure.obj" scale="0.001 0.001 0.001"/>
+  </asset>
+  
+  <worldbody>
+    <!-- Iluminação -->
+    <light pos="0 0 5" dir="0 0 -1" directional="true"/>
+    <light pos="2 2 3" dir="-1 -1 -1" directional="false"/>
+    
+    <!-- Chão -->
+    <geom name="floor" size="10 10 0.01" type="plane" material="groundplane"/>
+    
+    <!-- Paredes do escritório -->
+    <body name="office_walls" pos="-0.573 -0.700 0">
+      <geom mesh="body1_structure" class="visual" material="wall"/>
+    </body>
+    
+    <!-- Incluir o robô G1 -->
+    <include file="unitree_mujoco/unitree_robots/g1/g1_29dof_with_hand.xml"/>
+    
+    <!-- Posicionar o G1 no centro da sala -->
+    <!-- O G1 tem aproximadamente 1.2m de altura -->
+    <body name="g1_position_adjust" pos="0 0 0">
+      <!-- O modelo do G1 será carregado aqui pelo include -->
+    </body>
+  </worldbody>
+  
+  <!-- Câmera personalizada para visualizar a cena completa -->
+  <statistic center="0 0 1" extent="4"/>
+</mujoco>

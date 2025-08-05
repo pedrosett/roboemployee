@@ -1,0 +1,58 @@
+<mujoco model="body1_corrected">
+  <compiler angle="radian" meshdir="3d escritorio/body1_structure/"/>
+  
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="-130" elevation="-20"/>
+  </visual>
+  
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <material name="wall" rgba="0.95 0.95 0.95 1" specular="0.1"/>
+    
+    <!-- Body1 mesh com escala corrigida (10x maior) -->
+    <mesh file="body1_structure.obj" scale="0.01 0.01 0.01"/>
+  </asset>
+  
+  <worldbody>
+    <!-- Luz adicional -->
+    <light pos="0 0 10" dir="0 0 -1" directional="true"/>
+    
+    <!-- Chão -->
+    <geom name="floor" size="50 50 0.01" type="plane" material="groundplane"/>
+    
+    <!-- Body1 (paredes) com escala correta -->
+    <body name="walls" pos="-5.73 -7.00 0">
+      <geom mesh="body1_structure" class="visual" material="wall"/>
+    </body>
+    
+    <!-- Cubo de referência para escala (1m x 1m x 1m) -->
+    <body name="reference_cube" pos="10 0 0.5">
+      <geom type="box" size="0.5 0.5 0.5" rgba="1 0 0 0.3"/>
+    </body>
+    
+    <!-- Figura humana de referência (1.7m altura) -->
+    <body name="human_reference" pos="5 0 0">
+      <!-- Corpo -->
+      <geom type="cylinder" size="0.2 0.6" pos="0 0 1.1" rgba="0 0 1 0.3"/>
+      <!-- Cabeça -->
+      <geom type="sphere" size="0.15" pos="0 0 1.85" rgba="0 0 1 0.3"/>
+    </body>
+  </worldbody>
+  
+  <!-- Câmera personalizada -->
+  <statistic center="0 0 2" extent="15"/>
+</mujoco>

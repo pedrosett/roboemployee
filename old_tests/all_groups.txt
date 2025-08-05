@@ -1,0 +1,395 @@
+=== TODOS OS GRUPOS DO ARQUIVO OBJ ===
+
+1. cadeira giratoria
+   Vértices: 2787, Faces: 5450
+
+2. cadeira-giratoria_2
+   Vértices: 2787, Faces: 5450
+
+3. cadeira_giratoria_tvs_2
+   Vértices: 2787, Faces: 5450
+
+4. cadeira_giratoria_tvs
+   Vértices: 2787, Faces: 5450
+
+5. cadeira_giratoria_3
+   Vértices: 2787, Faces: 5450
+
+6. sofa_3
+   Vértices: 1980, Faces: 4088
+
+7. sofa_1
+   Vértices: 1980, Faces: 4088
+
+8. Body3:1
+   Vértices: 1836, Faces: 3804
+
+9. Body3:2
+   Vértices: 1836, Faces: 3804
+
+10. Body3:3
+   Vértices: 1836, Faces: 3804
+
+11. Body3:4
+   Vértices: 1836, Faces: 3804
+
+12. Body3:5
+   Vértices: 1836, Faces: 3804
+
+13. Body3:6
+   Vértices: 1836, Faces: 3804
+
+14. Body3:7
+   Vértices: 1836, Faces: 3804
+
+15. Body3:8
+   Vértices: 1836, Faces: 3804
+
+16. Body3:9
+   Vértices: 1836, Faces: 3804
+
+17. Body3:10
+   Vértices: 1836, Faces: 3804
+
+18. Body7
+   Vértices: 1502, Faces: 3112
+
+19. Body7:1
+   Vértices: 1502, Faces: 3112
+
+20. Body7:2
+   Vértices: 1502, Faces: 3112
+
+21. Body7:3
+   Vértices: 1502, Faces: 3112
+
+22. Body7:4
+   Vértices: 1502, Faces: 3112
+
+23. Body7:5
+   Vértices: 1502, Faces: 3112
+
+24. armario_impressora
+   Vértices: 1044, Faces: 2020
+
+25. armario_trofeus
+   Vértices: 1044, Faces: 2020
+
+26. sofa_2
+   Vértices: 787, Faces: 1548
+
+27. sofa_4
+   Vértices: 787, Faces: 1548
+
+28. armarin tvs
+   Vértices: 634, Faces: 1224
+
+29. escada 2
+   Vértices: 424, Faces: 844
+
+30. escada 1
+   Vértices: 424, Faces: 844
+
+31. Geladeira
+   Vértices: 388, Faces: 760
+
+32. aparador
+   Vértices: 333, Faces: 650
+
+33. cama
+   Vértices: 329, Faces: 650
+
+34. mesa_claudio
+   Vértices: 333, Faces: 650
+
+35. aparadorzin
+   Vértices: 333, Faces: 650
+
+36. mesa parede tvs
+   Vértices: 333, Faces: 650
+
+37. Body1
+   Vértices: 295, Faces: 642
+
+38. cadeira_de_pau_5
+   Vértices: 279, Faces: 522
+
+39. cadeira_de_pau_1
+   Vértices: 279, Faces: 522
+
+40. cadeira_de_pau_5 (1)
+   Vértices: 279, Faces: 522
+
+41. cadeira_de_pau_1 (1)
+   Vértices: 279, Faces: 522
+
+42. cadeira_de_pau_5 (1) (1)
+   Vértices: 279, Faces: 522
+
+43. cadeira_de_pau_1 (1) (1)
+   Vértices: 279, Faces: 522
+
+44. cadeira_de_pau_2
+   Vértices: 276, Faces: 516
+
+45. cadeira_de_pau_4
+   Vértices: 276, Faces: 516
+
+46. cadeira_de_pau_3
+   Vértices: 276, Faces: 516
+
+47. cadeira_de_pau_bosses
+   Vértices: 276, Faces: 516
+
+48. cadeira_de_pau_4 (1)
+   Vértices: 276, Faces: 516
+
+49. cadeira_de_pau_3 (1)
+   Vértices: 276, Faces: 516
+
+50. cadeira_de_pau_2 (1)
+   Vértices: 276, Faces: 516
+
+51. cadeira_de_pau_4 (1) (1)
+   Vértices: 276, Faces: 516
+
+52. cadeira_de_pau_3 (1) (1)
+   Vértices: 276, Faces: 516
+
+53. cadeira_de_pau_2 (1) (1)
+   Vértices: 276, Faces: 516
+
+54. armario_cama
+   Vértices: 268, Faces: 512
+
+55. mesa_1
+   Vértices: 233, Faces: 462
+
+56. mesa_centro_sofas
+   Vértices: 233, Faces: 462
+
+57. mesa _3
+   Vértices: 233, Faces: 462
+
+58. mesa_2
+   Vértices: 233, Faces: 462
+
+59. mesa bosses
+   Vértices: 233, Faces: 462
+
+60. mesa _3 (1)
+   Vértices: 233, Faces: 462
+
+61. mesa _3 (1) (1)
+   Vértices: 233, Faces: 462
+
+62. frigobar
+   Vértices: 68, Faces: 128
+
+63. armarinho escada
+   Vértices: 68, Faces: 128
+
+64. Body3
+   Vértices: 52, Faces: 100
+
+65. Body4
+   Vértices: 52, Faces: 100
+
+66. Body2
+   Vértices: 10, Faces: 16
+
+67. Body1:1
+   Vértices: 8, Faces: 12
+
+68. Body1:2
+   Vértices: 8, Faces: 12
+
+69. Body1:3
+   Vértices: 8, Faces: 12
+
+70. Body1:4
+   Vértices: 8, Faces: 12
+
+71. Body1:5
+   Vértices: 8, Faces: 12
+
+72. Body1:6
+   Vértices: 8, Faces: 12
+
+73. Body1:7
+   Vértices: 8, Faces: 12
+
+74. Body1:8
+   Vértices: 8, Faces: 12
+
+75. Body1:9
+   Vértices: 8, Faces: 12
+
+76. Body1:10
+   Vértices: 8, Faces: 12
+
+77. Body1:11
+   Vértices: 8, Faces: 12
+
+78. Body1:12
+   Vértices: 8, Faces: 12
+
+79. Body1:13
+   Vértices: 8, Faces: 12
+
+80. Body1:14
+   Vértices: 8, Faces: 12
+
+81. Body1:15
+   Vértices: 8, Faces: 12
+
+82. Body1:16
+   Vértices: 8, Faces: 12
+
+83. Body1:17
+   Vértices: 8, Faces: 12
+
+84. Body1:18
+   Vértices: 8, Faces: 12
+
+85. Body1:19
+   Vértices: 8, Faces: 12
+
+86. Body1:20
+   Vértices: 8, Faces: 12
+
+87. Body1:21
+   Vértices: 8, Faces: 12
+
+88. Body1:22
+   Vértices: 8, Faces: 12
+
+89. Body1:23
+   Vértices: 8, Faces: 12
+
+90. Body1:24
+   Vértices: 8, Faces: 12
+
+91. Body1:25
+   Vértices: 8, Faces: 12
+
+92. Body1:26
+   Vértices: 8, Faces: 12
+
+93. Body1:27
+   Vértices: 8, Faces: 12
+
+94. Body1:28
+   Vértices: 8, Faces: 12
+
+95. Body1:29
+   Vértices: 8, Faces: 12
+
+96. Body1:30
+   Vértices: 8, Faces: 12
+
+97. Body1:31
+   Vértices: 8, Faces: 12
+
+98. Body1:32
+   Vértices: 8, Faces: 12
+
+99. Body1:33
+   Vértices: 8, Faces: 12
+
+100. Body1:34
+   Vértices: 8, Faces: 12
+
+101. Body1:35
+   Vértices: 8, Faces: 12
+
+102. Body1:36
+   Vértices: 8, Faces: 12
+
+103. Body1:37
+   Vértices: 8, Faces: 12
+
+104. Body1:38
+   Vértices: 8, Faces: 12
+
+105. Body1:39
+   Vértices: 8, Faces: 12
+
+106. Body1:40
+   Vértices: 8, Faces: 12
+
+107. Body1:41
+   Vértices: 8, Faces: 12
+
+108. Body1:42
+   Vértices: 8, Faces: 12
+
+109. Body1:43
+   Vértices: 8, Faces: 12
+
+110. Body1:44
+   Vértices: 8, Faces: 12
+
+111. Body1:45
+   Vértices: 8, Faces: 12
+
+112. Body1:46
+   Vértices: 8, Faces: 12
+
+113. Body1:47
+   Vértices: 8, Faces: 12
+
+114. Body1:48
+   Vértices: 8, Faces: 12
+
+115. Body1:49
+   Vértices: 8, Faces: 12
+
+116. Body1:50
+   Vértices: 8, Faces: 12
+
+117. Body1:51
+   Vértices: 8, Faces: 12
+
+118. Body1:52
+   Vértices: 8, Faces: 12
+
+119. Body1:53
+   Vértices: 8, Faces: 12
+
+120. Body1:54
+   Vértices: 8, Faces: 12
+
+121. Body1:55
+   Vértices: 8, Faces: 12
+
+122. Body1:56
+   Vértices: 8, Faces: 12
+
+123. Body1:57
+   Vértices: 8, Faces: 12
+
+124. Body1:58
+   Vértices: 8, Faces: 12
+
+125. Body1:59
+   Vértices: 8, Faces: 12
+
+126. Body1:60
+   Vértices: 8, Faces: 12
+
+127. Body1:61
+   Vértices: 8, Faces: 12
+
+128. Body1:62
+   Vértices: 8, Faces: 12
+
+129. Body1:63
+   Vértices: 8, Faces: 12
+
+130. Body1:64
+   Vértices: 8, Faces: 12
+
+131. Body1:65
+   Vértices: 8, Faces: 12
+

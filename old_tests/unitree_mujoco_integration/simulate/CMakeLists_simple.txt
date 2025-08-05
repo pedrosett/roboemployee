@@ -1,0 +1,77 @@
+cmake_minimum_required(VERSION 3.16)
+project(unitree_mujoco)
+
+enable_language(C)
+enable_language(CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find MuJoCo
+find_package(mujoco REQUIRED)
+
+# Find required libraries
+find_package(Threads REQUIRED)
+find_package(OpenGL REQUIRED)
+
+# GLFW
+find_package(glfw3 QUIET)
+if(NOT glfw3_FOUND)
+    message(STATUS "GLFW not found via find_package, trying pkg-config")
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GLFW REQUIRED glfw3)
+endif()
+
+# Source files (without SDK bridge)
+file(GLOB SIM_SRC_BASIC
+    src/joystick/joystick.cc
+    src/mujoco/*.cc)
+
+# Create a simple main file without SDK
+file(WRITE ${CMAKE_CURRENT_BINARY_DIR}/main_simple.cc "
+#include <mujoco/mujoco.h>
+#include <iostream>
+#include <thread>
+#include \"mujoco/simulate.h\"
+
+int main(int argc, char** argv) {
+    std::cout << \"Unitree MuJoCo Simulator (Visualization Only)\" << std::endl;
+    std::cout << \"Note: Running without SDK - no robot control available\" << std::endl;
+    
+    // Default to G1 with hands
+    const char* model_file = \"../config_g1_hands_test.yaml\";
+    if (argc > 2 && std::string(argv[1]) == \"-c\") {
+        model_file = argv[2];
+    }
+    
+    mujoco::Simulate sim;
+    sim.start(argc, argv);
+    
+    return 0;
+}
+")
+
+# Create visualization-only executable
+add_executable(unitree_mujoco_viz ${SIM_SRC_BASIC} ${CMAKE_CURRENT_BINARY_DIR}/main_simple.cc)
+
+# Link libraries
+target_link_libraries(unitree_mujoco_viz 
+    mujoco::mujoco
+    ${CMAKE_THREAD_LIBS_INIT}
+    ${OPENGL_LIBRARIES}
+    yaml-cpp)
+
+if(TARGET glfw)
+    target_link_libraries(unitree_mujoco_viz glfw)
+else()
+    target_link_libraries(unitree_mujoco_viz ${GLFW_LIBRARIES})
+    target_include_directories(unitree_mujoco_viz PRIVATE ${GLFW_INCLUDE_DIRS})
+endif()
+
+# Set build type
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
+
+message(STATUS "Building visualization-only version (no SDK)")
+message(STATUS "To test G1 with hands, run:")
+message(STATUS "  ./unitree_mujoco_viz ../unitree_robots/g1/scene_29dof_with_hand.xml")

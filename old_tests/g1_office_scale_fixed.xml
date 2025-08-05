@@ -1,0 +1,64 @@
+<mujoco model="g1_office_environment">
+  <compiler angle="radian" meshdir="." autolimits="true"/>
+  
+  <statistic center="0 0 2" extent="20"/>
+  
+  <visual>
+    <headlight diffuse="0.6 0.6 0.6" ambient="0.3 0.3 0.3" specular="0 0 0"/>
+    <rgba haze="0.15 0.25 0.35 1"/>
+    <global azimuth="-130" elevation="-20"/>
+  </visual>
+  
+  <default>
+    <default class="visual">
+      <geom group="2" type="mesh" contype="0" conaffinity="0"/>
+    </default>
+    <default class="collision">
+      <geom group="3" type="mesh"/>
+    </default>
+  </default>
+  
+  <asset>
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+    <material name="wall" rgba="0.9 0.9 0.9 1" specular="0.1"/>
+    
+    <!-- Paredes do escritório com escala 10x maior -->
+    <mesh name="office_walls" file="3d escritorio/body1_structure/body1_structure.obj" scale="0.01 0.01 0.01"/>
+  </asset>
+  
+  <worldbody>
+    <!-- Iluminação -->
+    <light pos="0 0 10" dir="0 0 -1" directional="true"/>
+    <light pos="10 10 8" dir="-1 -1 -1" directional="false"/>
+    
+    <!-- Chão maior -->
+    <geom name="floor" size="50 50 0.05" type="plane" material="groundplane"/>
+    
+    <!-- Paredes do escritório (33m x 28m x 3.15m) -->
+    <body name="walls" pos="-5.73 -7.00 0">
+      <geom name="office_walls_geom" mesh="office_walls" class="visual" material="wall"/>
+    </body>
+    
+    <!-- Robô G1 simplificado (~1.2m altura) -->
+    <body name="g1_robot" pos="0 0 0">
+      <!-- Base/pernas -->
+      <geom type="cylinder" size="0.15 0.4" pos="0 0 0.4" rgba="0.8 0.2 0.2 0.9"/>
+      <!-- Torso -->
+      <geom type="box" size="0.2 0.1 0.3" pos="0 0 0.9" rgba="0.8 0.2 0.2 0.9"/>
+      <!-- Cabeça -->
+      <geom type="sphere" size="0.1" pos="0 0 1.15" rgba="0.8 0.2 0.2 0.9"/>
+      <!-- Braços -->
+      <geom type="capsule" size="0.04 0.25" pos="0.25 0 0.9" quat="0.707 0 0.707 0" rgba="0.8 0.2 0.2 0.9"/>
+      <geom type="capsule" size="0.04 0.25" pos="-0.25 0 0.9" quat="0.707 0 0.707 0" rgba="0.8 0.2 0.2 0.9"/>
+    </body>
+    
+    <!-- Referência de escala humana (1.7m) -->
+    <body name="human_reference" pos="5 0 0">
+      <geom type="cylinder" size="0.2 0.6" pos="0 0 0.6" rgba="0 0 1 0.5"/>
+      <geom type="sphere" size="0.15" pos="0 0 1.35" rgba="0 0 1 0.5"/>
+    </body>
+  </worldbody>
+</mujoco>
