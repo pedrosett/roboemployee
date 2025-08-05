@@ -135,26 +135,49 @@ export PATH="/usr/local/bin:$PATH"  # Já no ~/.bashrc
 
 ---
 
-## 🚧 **COMANDOS ATUAIS - DESENVOLVIMENTO GAZEBO:**
+## 🚧 **COMANDOS ATUAIS - ESTRATÉGIA HÍBRIDA:**
 
-*A ser preenchido conforme desenvolvimento progride...*
-
-### Verificação de Setup:
+### Verificação Setup (VALIDADO):
 ```bash
-# Verificar ROS2
-ros2 --version
+# ROS2 Jazzy - ✅ Funcional
+echo $ROS_DISTRO  # jazzy
 
-# Verificar Gazebo (a instalar se necessário)
-gazebo --version
+# Gazebo Harmonic - ✅ Instalado
+gz sim --version  # 8.9.0
 
-# Verificar URDF G1
-ls -la unitree_ros/robots/g1_description/
+# Repositórios - ✅ Ambos disponíveis
+ls -la unitree_ros/robots/g1_description/    # FONTE URDF
+ls -la unitree_ros2/example/src/src/g1/      # INTERFACE REAL
 ```
 
-## Important Notes
+### Próximos Comandos (FASE 1):
+```bash
+# Criar workspace ROS2 dedicado
+mkdir -p ~/ros2_g1_ws/src && cd ~/ros2_g1_ws/src
 
-- **MuJoCo Phase**: ✅ COMPLETED and archived in `old_tests/`
-- **Current Phase**: 🚧 Gazebo ROS2 setup and development
-- **Key Asset**: G1 5-finger URDF already available and tested
-- **Environment**: 3D office walls ready for conversion to Gazebo format
-- **Next Action**: Setup Gazebo ROS2 workspace and basic G1 spawn test
+# Copiar URDF base (unitree_ros ROS1 → ROS2)
+cp -r ~/Workspaces/G1/unitree_ros/robots/g1_description .
+
+# Link interface real (unitree_ros2)
+ln -s ~/Workspaces/G1/unitree_ros2 .
+
+# Instalar dependências Gazebo ROS2
+sudo apt install ros-jazzy-ros-gz-sim ros-jazzy-gz-ros2-control -y
+```
+
+### Referência MuJoCo (AINDA FUNCIONAL):
+```bash
+# Baseline funcional para comparação
+cd ~/Workspaces/G1/unitree_ros/robots/g1_description
+simulate g1_29dof_rev_1_0_with_inspire_hand_DFQ.urdf
+```
+
+## Important Notes - RESEARCH-BASED
+
+- **MuJoCo Phase**: ✅ COMPLETED and archived in `old_tests/` - **FUNCTIONAL BASELINE**
+- **Current Phase**: 🚧 Gazebo ROS2 hybrid approach (unitree_ros + unitree_ros2)
+- **Key Discovery**: 🔬 **Combine repositories** - URDF from ros1 + control from ros2
+- **Critical Limitation**: ⚠️ Gazebo lacks native G1 walking controller
+- **Solution Strategy**: Focus on perception/planning/manipulation + custom balance
+- **Environment**: 3D office ready (scale/positioning validated in MuJoCo)
+- **Next Action**: Port URDF unitree_ros → ROS2 + gz_ros2_control integration
